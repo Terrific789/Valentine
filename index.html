@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="A romantic Valentine website dedicated to Mercy, filled with heartfelt words, memories, and love." />
+  <meta name="keywords" content="Valentine, love, Mercy, romantic website, love letter, memories" />
+  <meta name="author" content="With Love" />
+  <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="theme-color" content="#e23e63" />
+  <meta name="color-scheme" content="light" />
+  <meta name="application-name" content="For Mercy" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="For Mercy" />
+
+  <meta property="og:title" content="For Mercy, My Love" />
+  <meta property="og:description" content="A heartfelt Valentine website for Mercy, full of sweet words, music, and beautiful memories." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="favicon.svg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="For Mercy, My Love" />
+  <meta name="twitter:description" content="A heartfelt Valentine website for Mercy, full of sweet words, music, and beautiful memories." />
+  <meta name="twitter:image" content="favicon.svg" />
+
+  <title>For Mercy, My Love, My Partner and My World</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=2" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
+  <link rel="shortcut icon" href="favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon.png?v=2" />
+  <link rel="canonical" href="./" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="heart-canvas" aria-hidden="true"></canvas>
+
+  <main class="page-wrap">
+    <section class="hero">
+      <p class="kicker">Happy Valentine's Day</p>
+      <h1>Mercy, you are the moonlight my heart learned to breathe in</h1>
+      <p class="lead">
+        Every moment with you feels like a small miracle. This little page is a tiny way of saying
+        I love you, deeply and endlessly.
+      </p>
+
+      <div class="actions">
+        <button id="open-letter" class="btn btn-primary">Open My Letter</button>
+        <button id="surprise-btn" class="btn btn-ghost">Tap for a Surprise</button>
+        <button id="music-btn" class="btn btn-ghost" aria-pressed="false">Music: Off</button>
+      </div>
+
+      <div class="stats">
+        <article class="card">
+          <p class="card-label">Love Meter</p>
+          <div class="meter">
+            <div id="love-fill" class="meter-fill"></div>
+          </div>
+          <p id="love-text" class="card-value">0%</p>
+        </article>
+
+        <article class="card">
+          <p class="card-label">Next Date Night In</p>
+          <p id="countdown" class="card-value">Calculating...</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="letter" class="letter" hidden>
+      <h2>My Love, Mercy,</h2>
+      <p id="letter-text"></p>
+    </section>
+
+    <section class="photo-note">
+      <h3>Why You Are Special</h3>
+      <ul id="reasons-list"></ul>
+    </section>
+
+    <section id="romantic-surprise" class="romantic-surprise" hidden>
+      <h3>A Little Love Corner For Mercy</h3>
+      <p id="surprise-line" class="surprise-line">
+        Mercy, you are adored more than words can ever fully tell.
+      </p>
+
+      <div id="memory-carousel" class="memory-carousel" aria-label="Romantic memories">
+        <div id="memory-track" class="memory-track">
+          <figure class="memory-card">
+            <!-- Replace with your photo path -->
+            <img src="images\pm_1754635147537_cmp.jpg" alt="Memory of Mercy smiling" />
+            <figcaption>Your smile is my favorite sunrise.</figcaption>
+          </figure>
+          <figure class="memory-card">
+            <!-- Replace with your video path -->
+            <video
+              src="video\Snapchat-291711841.mp4"
+              aria-label="Memory of us together"
+              playsinline
+              preload="metadata"
+              controls
+            ></video>
+            <figcaption>With you, ordinary moments become sacred.</figcaption>
+          </figure>
+          <figure class="memory-card">
+            <!-- Replace with your photo path -->
+            <img src="images\69244b1f174e4e51a204c5b03a63d186.jpg" alt="Memory of Mercy glowing" />
+            <figcaption>You are brave, beautiful, and deeply loved.</figcaption>
+          </figure>
+          <figure class="memory-card">
+            <!-- Replace with your photo path -->
+            <img src="images\pm_1754635147240_cmp.jpg" alt="Memory of Mercy laughing" />
+            <figcaption>Your laugh heals parts of me no one else can reach.</figcaption>
+          </figure>
+          <figure class="memory-card">
+            <!-- Replace with your photo path -->
+            <img src="images\IMG-20250420-WA0027.jpg" alt="Memory of Mercy in a beautiful outfit" />
+            <figcaption>You wear grace like light wears the morning sky.</figcaption>
+          </figure>
+          <figure class="memory-card">
+            <!-- Replace with your photo path -->
+            <img src="images/pm_1754635149122_cmp.jpg" alt="Memory of a warm moment with Mercy" />
+            <figcaption>Every moment with you feels written by love itself.</figcaption>
+          </figure>
+          <figure class="memory-card">
+            <!-- Replace with your photo path -->
+            <img src="images\IMG-20260117-WA0013.jpg" alt="Memory of Mercy on a special day" />
+            <figcaption>You are a blessing I will never stop thanking God for.</figcaption>
+          </figure>
+          <figure class="memory-card">
+            <!-- Replace with your photo path -->
+            <img src="images\IMG-20250512-WA0032(1).jpg" alt="Memory of Mercy looking radiant" />
+            <figcaption>My heart still races every time I look at you.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="love-audio" preload="auto">
+    <!-- Track 1 and Track 2 are controlled in script.js inside `playlistTracks` -->
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
