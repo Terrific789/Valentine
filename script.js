@@ -291,6 +291,7 @@ function setupMusicToggle() {
   ];
   let currentTrackIndex = 0;
   let nextTrackTimer = null;
+  let autoPlayBlocked = false;
 
   const clearNextTrackTimer = () => {
     if (nextTrackTimer) {
@@ -314,6 +315,7 @@ function setupMusicToggle() {
   const playCurrentTrack = async () => {
     await audio.play();
     on = true;
+    autoPlayBlocked = false;
     musicBtn.setAttribute("aria-pressed", "true");
     musicBtn.textContent = `Music: On (${currentTrackIndex + 1}/${playlistTracks.length})`;
   };
@@ -324,15 +326,30 @@ function setupMusicToggle() {
         setTrack(0);
       }
       await playCurrentTrack();
+      return true;
     } catch {
+      autoPlayBlocked = true;
       setStoppedState("Music: Tap to Play");
+      return false;
     }
   };
 
+  const unlockOnFirstInteraction = () => {
+    if (!autoPlayBlocked || on) {
+      return;
+    }
+    tryAutoPlay();
+  };
+
+  ["pointerdown", "keydown", "touchstart"].forEach((eventName) => {
+    window.addEventListener(eventName, unlockOnFirstInteraction, { passive: true });
+  });
+
   window.addEventListener("load", () => {
-    setTimeout(() => {
-      tryAutoPlay();
-    }, 2500);
+    if (!audio.src) {
+      setTrack(0);
+    }
+    tryAutoPlay();
   });
 
   audio.addEventListener("ended", async () => {
